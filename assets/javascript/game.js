@@ -1,21 +1,21 @@
-    var superHero;
-    var superVillian;
-    var isVillianChosen = false;
-
-    function Hero(name, code, health, counterAtk, heroImg) {
+    let hero;    
+    
+    function Hero() {
         this.name = name;
         this.code = code;
         this.health = health;
         this.counterAtk = counterAtk;
-        this.heroImg = function () {
-            loadImage("..\\images\\" + this.code + ".jpg");
+        this.heroImg = document.getElementById("bank").src = "..\\images\\" + this.code + ".jpg";
       };
-    }
-    debugger;
+ 
     var heroLS = new Hero("Luke Skywalker", "heroLS", 100, 12);
     var heroDV = new Hero("Darth Vader", "heroDV", 100, 12);
     var heroDM = new Hero("Darth Maul", "heroDM", 100, 12);
     var heroLS = new Hero("Darth Raven", "heroDR", 100, 12);
+
+    var superHero = null;
+      var superVillian = null;
+      var isVillianChosen = false;
 
     $(".bank").on("click", function () {
 
