@@ -1,63 +1,88 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-us">
 
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
 	<title>Star Wars RPG</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!--Custom CSS-->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- Game Logic -->
+	<script type="text/javascript" src="assets/javascript/logic.js"></script>
 </head>
 
 <body>
 
-	<h1>Star Wars RPG</h1>
-	<div class="top-container">
+	<div class="top-container main-game-section">
 		<div class="row">
-			<div class="col"><img src="http://lorempixel.com/output/abstract-q-c-200-200-10.jpg" alt=""></div>
-			<div class="col"><img src="http://lorempixel.com/output/abstract-q-c-200-200-10.jpg" alt=""></div>
-			<div class="col"><img src="http://lorempixel.com/output/abstract-q-c-200-200-10.jpg" alt=""></div>
-			<div class="col"><img src="http://lorempixel.com/output/abstract-q-c-200-200-10.jpg" alt=""></div>
+			<h5 class="center-align">Star Wars RPG</h5>
 		</div>
-		<div class="row">
-			<div class="col-5">
-				<h1>HERO</h1>
-				<img src="http://lorempixel.com/output/abstract-q-c-400-400-5.jpg" class="card-img-top">
-			</div>
-			<div class="col-2">
-				<H1>VS.</H1>
-				<button class="btn btn-primary" type="submit">Attack</button>
-			</div>
-			<div class="col-5">
-				<H1>VILLIAN</H1>
-				<img src="http://lorempixel.com/output/abstract-q-c-400-400-5.jpg" class="card-img-top">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col"><img src="http://lorempixel.com/output/abstract-q-c-200-200-10.jpg" alt=""></div>
-			<div class="col"><img src="http://lorempixel.com/output/abstract-q-c-200-200-10.jpg" alt=""></div>
-			<div class="col"><img src="http://lorempixel.com/output/abstract-q-c-200-200-10.jpg" alt=""></div>
-			<div class="col"><img src="http://lorempixel.com/output/abstract-q-c-200-200-10.jpg" alt=""></div>
-		</div>
-	</div>
+		<!--END OF ROW 1-->
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<div class="row">
+			<!-- Where the characters are initially available to be selected. -->
+			<div id="characters-section">
+				<div class="section-title">Select Your Character</div>
+			</div>
+		</div>
+		<!--END OF ROW 2-->
+
+		<div class="row center-align">
+			<!-- Area for game messages. -->
+			<div id="game-message" class="flow-text center-align"></div>
+
+			<div class="col hero-box blue">
+				<div class="character-section">
+					<!-- Where our selected character will appear. -->
+					<div class="section-title">Your Hero</div>
+					<div id="selected-character"></div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="valign-wrapper flow-text">VS.</div>
+			</div>
+
+			<div class="col villian-box red">
+				<div id="action">
+					<div class="character-section">
+						<!-- Where our defender will appear. -->
+						<div class="section-title">Villian</div>
+						<div id="defender"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col offset-s1">
+				<div id="fight-section">
+					<button class="waves-light btn red" id="attack-button">Attack</button>
+				</div>
+			</div>
+		</div>
+		<!--END OF ROW 3-->
+
+		<div class="row">
+			<!-- Where our enemies available to attack will appear. -->
+			<div id="available-to-attack-section">
+				<div class="section-title center-align flow-text">Enemies Available To Attack</div>
+			</div>
+		</div>
+		<!--END OF ROW 4-->
+	</div>
+	<!--END OF TOP CONTAINER-->
+
+
+	<!--JavaScript at end of body for optimized loading-->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-	<script src="assets\\javascript\\game.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 
 </html>
